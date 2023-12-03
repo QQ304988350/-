@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<lcproj projname="ÎÔ²ÛÔ­" is_acc_mode="0" appname="yuan" pkgname="com.wang.yuan" autorotate="false" rgbmode="false" localmode="true" targetsize="0x0" ver="1" sel="0" cputype="2" showfloatcontrol="1" isdebugapkplugin="0" showhome="0" autorun="1" autorunscript="0" jmpjdcheck="0" useocr="1" useoldmenu="0" updateurl="" pluginapkpath="">
+    <lua entry="ÎÔ²ÛÔ­.lua"/>
+    <ui entry="ÎÔ²ÛÔ­.ui"/>
+    <rc entry="ÎÔ²ÛÔ­.rc"/>
+    <luae>
+        <file name="x86"/>
+        <file name="armeabi-v7a"/>
+    </luae>
+</lcproj>
