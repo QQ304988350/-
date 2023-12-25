@@ -11,7 +11,6 @@ function is_shop()
 	
 	local intX,intY = findMultiColor(0,0,0,0,"FFFFFF","-14|9|FFFFFF|0|21|FFFFFF|-6|10|432B22|9|13|4A2A18|32|10|341E11|64|8|CAC6C4|95|9|886848|112|13|DEDEDE",0,0.9)
 	if intX>-1 and intY>-1 then
-		toast("当前在商店页面",0,0,12)
 		随机延迟()
 		return true
 	else
@@ -31,7 +30,7 @@ function 购买()
 		intX,intY = findMultiColor(432,327,655,438,"FDA825","18|0|0B1B0D|39|-4|F0CF4B|141|-2|FFFFFF",0,0.9)
 		if intX>-1 and intY>-1 then
 			local r = rnd(-3,3)
-			click(intX+r,intY+r)
+			click(intX+r+50,intY+r)
 			--初始化一下界面,防止出现一些奇奇怪怪的页面阻挡,无意义
 			click(15+r,300+r)
 			return true
@@ -59,7 +58,7 @@ end
 function 寻找书签并购买(d_x,d_y,x1,y1,x2,y2,first_color,offset_color,dir,sim)
 	-- d_x d_y x跟y轴偏移量
 	local intX,intY = findMultiColor(x1,y1,x2,y2,first_color,offset_color,dir,sim)
-	print(intX,intY,d_x,d_y)
+	--print(intX,intY,d_x,d_y)
 	if intX>-1 and intY>-1 then
 		click(intX+d_x,intY+d_y)
 		购买()
@@ -108,25 +107,30 @@ end
 
 function 自动刷商店()
 	while true do
-		更新页面()
-		随机延迟()
+		--ret = is_shop ()
+		--if  ret==false then
+		--	exitScript()
+		--end
+		
 		派遣任务重新进行()
 		随机延迟()
 		买书签()
-		随机延迟()
+		sleep(500)
 		滑动页面()
-		随机延迟()
+		sleep(1000)
 		买书签()
+		随机延迟()
+		更新页面()
 		随机延迟()
 	end
 	
 end
 
 
-ret = is_shop ()
-if ret then
+
+
 自动刷商店()
-end
+
 
 
 
